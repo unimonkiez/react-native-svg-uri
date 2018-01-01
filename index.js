@@ -233,7 +233,7 @@ class SvgUri extends Component{
       .map(utils.removePixelsFromNodeValue)
       .filter(utils.getEnabledAttributes(enabledAttributes.concat(COMMON_ATTS)))
       .reduce((acc, {nodeName, nodeValue}) => {
-        acc[nodeName] = (this.state.fill && nodeName === 'fill' && nodeValue !== 'none') ? this.state.fill : nodeValue
+        acc[nodeName] = (this.state.fill && nodeName === 'fill' && nodeValue === 'replace') ? this.state.fill : nodeValue
         return acc
       }, {});
     Object.assign(componentAtts, styleAtts);
